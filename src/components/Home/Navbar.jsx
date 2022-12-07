@@ -1,11 +1,11 @@
 import React from "react"
-import "../../styles/Header.css"
+import { NavLink } from 'react-router-dom'
 
 export default function Navbar() {
-    return (
-    <div className="navbar">
-        <a href="/">Accueil</a>
-        <a href="/AboutUs">A Propos</a>
-    </div>
-    )
+	return (
+		<nav className="navbar">
+			<NavLink to="/">Accueil</NavLink>
+			<NavLink to="/AboutUs">À propos</NavLink>
+		</nav>
+	)
 }
