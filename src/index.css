@@ -1,11 +1,7 @@
-main {
-    max-width: 1440px;
-    margin: 0 auto;
-    
-}
-
 body {
     margin: 0;
     font-family: "Montserrat", "sans-serif";
     background-color: #E5E5E5;
+    max-width: 1440px;
+    margin: 0 auto;
 }
