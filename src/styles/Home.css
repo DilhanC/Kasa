@@ -37,6 +37,8 @@
     display: flex;
     justify-content: center;
     margin: 1rem 0 2rem 0;
+    background-color: black;
+    border-radius: 25px;
 }
 
 .banner p {
@@ -50,9 +52,9 @@
 .bannerImg {
     width: 100%;
     height: 180px;
-    filter: contrast(0.5);
     border-radius: 25px;
     object-fit: cover;
+    opacity: 0.7;
 }
 
 @media (max-width: 500px) {
@@ -70,6 +72,7 @@
     background-color: #F6F6F6;
     margin: 0 30px;
     border-radius: 15px;
+    padding: 2rem 0;
 }
 
 .card {
@@ -78,9 +81,7 @@
     height: 240px;
     width: 280px;
     margin: 10px 20px;
-    border-radius: 10px;
-    background: rgb(255, 96, 96);
-    background: linear-gradient(180deg, rgb(255, 96, 96) 35%, rgba(13, 9, 12, 0.5788690476) 100%);
+    
 }
 
 .card img {
@@ -88,7 +89,6 @@
     height: 100%;
     border-radius: 10px;
     object-fit: cover;
-    filter: brightness(0.8);
 }
 
 .card p {
