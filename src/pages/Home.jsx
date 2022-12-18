@@ -7,8 +7,15 @@ import { Link } from "react-router-dom"
 import Footer from "../components/Footer"
 
 export default function Home() {
-    const AppCard = () => (
-        <div className="listCard">
+
+    return (
+        <div>
+          <Header />
+          <div className="banner">
+              <img className="bannerImg" src={imgHeader} alt="représentation de montagne"/>
+              <p>Chez vous, partout et ailleurs</p>
+          </div>
+          <div className="listCard">
           {cardItems.map((item) => {
             return (
               <Link key={item.id} to={`/lodging/${item.id}`}>
@@ -20,16 +27,6 @@ export default function Home() {
             )
           })}
         </div>
-      )
-
-    return (
-        <div>
-            <Header />
-            <div className="banner">
-                <img className="bannerImg" src={imgHeader} alt="représentation de montagne"/>
-                <p>Chez vous, partout et ailleurs</p>
-            </div>
-            <AppCard />
             <Footer />
         </div>
         )
