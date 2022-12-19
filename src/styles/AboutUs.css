@@ -1,0 +1,33 @@
+.accordion__title {
+    background-color: #FF6060;
+    color: white;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+}
+
+.accordion__content {
+    background-color: #F6F6F6;
+    border-radius: 1rem;
+    padding: 1rem;
+    color: #FF6060;
+    font-size: larger;
+}
+
+.accordion {
+    margin-bottom: 1rem;
+}
+
+.accordion__title {
+    display: flex;
+    justify-content: space-between;
+}
+
+.false {
+    visibility: hidden;
+    opacity: 0;
+    height: 0;
+}
+
+.active {
+    transition: all .2s ease-in;
+}

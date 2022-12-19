@@ -1,17 +1,23 @@
 import React from "react"
+import { useState } from "react"
+import Vector from "../assets/Vector.svg"
 
 export default function Collapse(props) {
+    const [active, setActive] = useState(false)
 
+    const clicked = e => {
+        setActive(!active)
+    }
 
-return (
-    <div>
-        <button key={props.id} className="infoHeader">
-            {props.title}
-        </button>
-        <div className="txt">
-            {props.text}
+    return (
+        <div className="accordion">
+            <div className="accordion__title" onClick={clicked}>
+                {props.title}
+                <img src={Vector} alt="boutton" />
+            </div>
+            <div className={`accordion__content ${active && "active"}`}>
+                {props.text}
+            </div>
         </div>
-    </div>
-)
+    )
 }
-
