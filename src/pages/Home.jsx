@@ -9,7 +9,7 @@ export default function Home() {
 	const [data, setData] = useState([])
 
 	useEffect(() => {
-		fetch(`http://localhost:3000/cardItems`)
+		fetch(`http://localhost:3000/lodgement.json`)
 			 .then((res) => res.json()
 			 .then(({ data }) => console.log(data))
 			 .catch((error) => console.log(error))
