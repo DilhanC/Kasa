@@ -10,12 +10,12 @@ export default function Collapse(props) {
     }
 
     return (
-        <div className="accordion">
+        <div className={`accordion ${active && "active"}`}>
             <div className="accordion__title" onClick={clicked}>
                 {props.title}
                 <img src={Vector} alt="boutton" />
             </div>
-            <div className={`accordion__content ${active && "active"}`}>
+            <div className="accordion__content">
                 {props.text}
             </div>
         </div>

@@ -1,8 +1,6 @@
 import React from "react"
 import "../styles/AboutUs.css"
-import Header from "../components/Header"
 import imgAboutUs from "../assets/imgAboutUs.jpg"
-import Footer from "../components/Footer"
 import Collapse from "../components/Collapse"
 
 export default function AboutUs() {
@@ -28,17 +26,18 @@ export default function AboutUs() {
     ]
 
     return (
-        <div>
-            <Header />
-            <div className="banner">
-                <img className="bannerImg" src={imgAboutUs} alt="représentation de montagne"/>
-            </div>
-            <div className="accordions">
-              {info.map((el) => {
-                return <Collapse title={el.title} text={el.text} />
-              })}
-            </div>
-            <Footer />
+      <div>
+        <div className="banner">
+          <img className="bannerImg" src={imgAboutUs} alt="représentation de montagne"/>
         </div>
-    )
+        <div className="accordions">
+          {info.map((item) =>
+            <Collapse 
+              title={item.title} 
+              text={item.text} 
+            />
+          )}
+        </div>
+      </div>
+  )
 }

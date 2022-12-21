@@ -36,7 +36,7 @@
 .banner {
     display: flex;
     justify-content: center;
-    margin: 1rem 0 2rem 0;
+    margin: 1rem 1rem 2rem 1rem;
     background-color: black;
     border-radius: 25px;
 }
@@ -78,10 +78,11 @@
 .card {
     display: flex;
     flex-direction: column-reverse;
+    border-radius: 10px;
     height: 240px;
     width: 280px;
     margin: 10px 20px;
-    
+    background: linear-gradient(180deg, rgba(255,255,255,0) 30%, rgba(0,0,0,1) 100%, rgba(0,0,0,1) 100%);
 }
 
 .card img {
@@ -89,6 +90,7 @@
     height: 100%;
     border-radius: 10px;
     object-fit: cover;
+    opacity: 0.6;
 }
 
 .card p {

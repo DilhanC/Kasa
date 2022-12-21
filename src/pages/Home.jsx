@@ -1,33 +1,36 @@
-import React from "react"
 import "../styles/Home.css"
-import Header from "../components/Header"
 import imgHeader from "../assets/imgHeader.jpg"
-import { cardItems } from "../assets/logements"
-import { Link } from "react-router-dom"
-import Footer from "../components/Footer"
+import LodgingCard from "../components/LodgingCard"
+import React, { useState, useEffect } from "react"
+
 
 export default function Home() {
 
-    return (
-        <div>
-          <Header />
-          <div className="banner">
-              <img className="bannerImg" src={imgHeader} alt="représentation de montagne"/>
-              <p>Chez vous, partout et ailleurs</p>
-          </div>
-          <div className="listCard">
-          {cardItems.map((item) => {
-            return (
-              <Link key={item.id} to={`/lodging/${item.id}`}>
-                <div className="card">
-                  <img src={item.cover} alt={item.title} />
-                  <p>{item.title}</p>
-                </div>
-              </Link>
-            )
-          })}
-        </div>
-            <Footer />
-        </div>
-        )
-    }
+	const [data, setData] = useState([])
+
+	useEffect(() => {
+		fetch(`http://localhost:3000/cardItems`)
+			 .then((res) => res.json()
+			 .then(({ data }) => console.log(data))
+			 .catch((error) => console.log(error))
+		 )
+	 }, [])
+
+	return (
+	    <div>
+			<div className="banner">
+				<img className="bannerImg" src={imgHeader} alt="représentation de montagne"/>
+				<p>Chez vous, partout et ailleurs</p>
+			</div>
+			<div className="listCard">
+				{data.map((item) => 
+					<LodgingCard 
+						title={item.title} 
+						cover={item.cover}
+						id={item.id}
+					/>
+				)}
+			</div>
+	    </div> 
+  )
+}
