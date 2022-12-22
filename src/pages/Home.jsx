@@ -1,7 +1,7 @@
 import "../styles/Home.css"
 import imgHeader from "../assets/imgHeader.jpg"
 import LodgingCard from "../components/LodgingCard"
-import React, { useState, useEffect } from "react"
+import React, { useState, useEffect, Link } from "react"
 
 
 export default function Home() {
@@ -9,12 +9,11 @@ export default function Home() {
 	const [data, setData] = useState([])
 
 	useEffect(() => {
-		fetch(`http://localhost:3000/lodgement.json`)
-			 .then((res) => res.json()
-			 .then(({ data }) => console.log(data))
-			 .catch((error) => console.log(error))
-		 )
-	 }, [])
+		fetch(`lodgment.json`)
+		  .then(res => res.json())
+		  .then(({datas})  => setData(datas))
+		  .catch(err => console.log(err))
+	  }, [])
 
 	return (
 	    <div>
@@ -23,12 +22,14 @@ export default function Home() {
 				<p>Chez vous, partout et ailleurs</p>
 			</div>
 			<div className="listCard">
-				{data.map((item) => 
-					<LodgingCard 
-						title={item.title} 
-						cover={item.cover}
-						id={item.id}
-					/>
+				{data.map( (el) => 
+					<Link key={el.id} to={`/lodging/${el.id}`}>
+						<LodgingCard 
+							title={el.title} 
+							cover={el.cover}
+							id={el.id}
+						/>
+					</Link>
 				)}
 			</div>
 	    </div> 
