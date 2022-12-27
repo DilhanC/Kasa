@@ -8,11 +8,28 @@ export default function Home() {
 
 	const [data, setData] = useState([])
 
+	// useEffect(() => {
+	// 	async function fetchDatas() {
+	// 	  setDataLoading(true)
+	// 	  try {
+	// 		const res = await fetch(`lodgment.json`)
+	// 		const { datas } = await res.json()
+	// 		setData(datas)
+	// 	  } catch (err) {
+	// 		console.log('===== error =====', err)
+	// 	  } finally {
+	// 		setDataLoading(false)
+	// 	  }
+	// 	}
+	// 	fetchDatas()
+	//   }, [])
+
 	useEffect(() => {
 		fetch(`lodgment.json`)
-		  .then(res => res.json())
-		  .then(({datas})  => setData(datas))
-		  .catch(err => console.log(err))
+		  .then((res) => res.json()
+		  .then(({ datas })  => setData(datas))
+		  .catch(err => console.log('===== error =====', err))
+		  )
 	  }, [])
 
 	return (
@@ -22,15 +39,14 @@ export default function Home() {
 				<p>Chez vous, partout et ailleurs</p>
 			</div>
 			<div className="listCard">
-				{data.map( (el) => 
+				{data.map((el) => (
 					<Link key={el.id} to={`/lodging/${el.id}`}>
 						<LodgingCard 
 							title={el.title} 
 							cover={el.cover}
-							id={el.id}
 						/>
 					</Link>
-				)}
+				))}
 			</div>
 	    </div> 
   )

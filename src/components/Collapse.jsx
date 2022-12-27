@@ -6,7 +6,7 @@ export default function Collapse(props) {
     const [active, setActive] = useState(false)
 
     const clicked = e => {
-        setActive(!active)
+        setActive(!active) 
     }
 
     return (
