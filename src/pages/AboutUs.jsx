@@ -4,14 +4,23 @@ import imgAboutUs from "../assets/imgAboutUs.jpg"
 import Collapse from "../components/Collapse"
 
 export default function AboutUs() {
+
     const [data, setData] = useState([])
 
     useEffect(() => {
-      fetch(`src/assets/about.json`)
-        .then(res => res.json())
-        .then(datas  => setData(datas)) 
-        .catch(err => console.log(err))
-      }, [])
+      fetch("http://localhost:3000/aboutus.json")
+      .then(function(res) {
+        if(res.ok) {
+          return res.json()
+        }
+      })
+      .then(function(res) {
+        setData(res)
+      })
+      .catch(function(err) {
+        console.log(err)
+      })
+    }, [])
 
     return (
       <div>
@@ -27,5 +36,5 @@ export default function AboutUs() {
           )}
         </div>
       </div>
-  )
+    )
 }
