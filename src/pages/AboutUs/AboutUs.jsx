@@ -1,7 +1,7 @@
 import React, { useState, useEffect} from "react"
-import "../styles/AboutUs.css"
-import imgAboutUs from "../assets/imgAboutUs.jpg"
-import Collapse from "../components/Collapse"
+import "./AboutUs.css"
+import imgAboutUs from "../../assets/imgAboutUs.jpg"
+import Collapse from "../../components/Collapse/Collapse"
 
 export default function AboutUs() {
 

@@ -1,0 +1,30 @@
+.header {
+    display: flex;
+    padding-top: 1rem;
+}
+
+.logo {
+    margin-right: auto;
+    padding: 1rem;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+}
+
+.navbar a {
+    margin: 0 2rem 0 2rem;
+    color: inherit;
+    text-decoration: none;
+    color: #FF6060;
+    font-weight: 500;
+    font-size: 1.2rem;
+    border-bottom: 2px solid transparent;
+}
+
+.navbar a:hover {
+    border-bottom-color: #FF6060;
+}

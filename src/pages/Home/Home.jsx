@@ -1,8 +1,8 @@
-import "../styles/Home.css"
-import imgHeader from "../assets/imgHeader.jpg"
-import LodgingCard from "../components/LodgingCard"
+import "./Home.css"
+import imgHeader from "../../assets/imgHeader.jpg"
+import LodgingCard from "../../components/LodgingCard/LodgingCard"
 import React, { useState, useEffect } from "react"
-import { Link } from "react-router-dom";
+import { Link } from "react-router-dom"
 
 
 export default function Home() {

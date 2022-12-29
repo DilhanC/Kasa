@@ -1,5 +1,5 @@
 import React from "react"
-
+import "./LodgingCard.css"
 
 export default function LodgingCard(props) {
 

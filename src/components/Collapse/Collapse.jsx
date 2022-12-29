@@ -1,6 +1,7 @@
 import React from "react"
 import { useState } from "react"
-import Vector from "../assets/Vector.svg"
+import Vector from "../../assets/Vector.svg"
+import "./Collapse.css"
 
 export default function Collapse(props) {
     const [active, setActive] = useState(false)
