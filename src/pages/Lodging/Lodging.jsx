@@ -2,8 +2,6 @@ import React, { useState, useEffect } from "react"
 import { useParams, useNavigate } from "react-router-dom"
 import Collapse from "../../components/Collapse/Collapse"
 import Gallery from "../../components/Gallery/Gallery"
-import Star from "../../assets/Star.png"
-import NoStar from "../../assets/Star.png"
 import "./Lodging.css"
 
 export default function Lodging() {
@@ -32,42 +30,46 @@ export default function Lodging() {
 	}, [])
 
 	/* Rating */
-	let StarsNumber = data.rating
+	const stars = data.rating
 
 	const maxStar = 5;
 	const rating = []
   
 	for (let i = 1; i < maxStar + 1; i++) {
-	  if (i <= StarsNumber) {
-		rating.push(<svg key={i} src={Star}></svg>)
+	  if (i <= stars) {
+		rating.push(<svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M18.645 12L15 0L11.355 12H0L9.27 18.615L5.745 30L15 22.965L24.27 30L20.745 18.615L30 12H18.645Z" fill="#FF6060"/>
+					</svg>)
 	  } else {
-		rating.push(<svg key={i} src={NoStar}></svg>)
+		rating.push(<svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M18.645 12L15 0L11.355 12H0L9.27 18.615L5.745 30L15 22.965L24.27 30L20.745 18.615L30 12H18.645Z" fill="#E3E3E3"/>
+					</svg>)
 	  }
 	}
 
+	console.log(data)
+
 	return (
-		<div className="body">
+		<div className="bodyy">
 			{ data && (
 				<div>
 					<div>
-						<div>
-							{/* <Gallery /> */}
-							<p>{data.title}</p>
-							<p>{data.location}</p>
-							{ data.tags && data.tags.length > 0 && data.tags.map((tag) =>
-								<li>{tag}</li>
-							)}
-						</div>
-						<div>
-								<div>
-									<p>{data.host.name}</p>
-									<img src={data.host.picture} alt="personne qui loue le logement" />
-								</div>
-								{/* <div>
-									{rating}
-								</div> */}
-						</div>
+						<Gallery />
+						<p className="title">{data.title}</p>
+						<p className="location">{data.location}</p>
+						{ data.tags && data.tags.length > 0 && data.tags.map((tag) =>
+							<li className="tags" key={tag}>{tag}</li>
+						)}
 					</div>
+					<div>
+							{/* <div>
+								<p>{data.host.name}</p>
+								<img src={data.host.picture} alt="personne qui loue le logement" />
+							</div> */}
+							<div className="stars">
+								{rating}
+							</div>
+						</div>
 					<div>
 						<Collapse title="Description" text={data.description} />
 						<Collapse title="Equipements" text={data.equipments} />

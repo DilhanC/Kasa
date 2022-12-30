@@ -1,5 +1,4 @@
 import React, { useState, useEffect} from "react"
-import "./AboutUs.css"
 import imgAboutUs from "../../assets/imgAboutUs.jpg"
 import Collapse from "../../components/Collapse/Collapse"
 
