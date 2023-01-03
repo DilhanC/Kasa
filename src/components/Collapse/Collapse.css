@@ -29,6 +29,7 @@
 
 .false .accordion__content {
     visibility: hidden;
+    overflow: hidden;
     opacity: 0;
     height: 0;
     padding: 0;

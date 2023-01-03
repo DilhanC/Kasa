@@ -4,19 +4,96 @@
 
 .stars {
     display: flex;
+    margin-top: 1rem;
+    justify-content: flex-end;
 }
 
 .title {
-    font-size: 2.5rem;
+    font-size: 36px;
     color: #FF6060;
-    margin: 1rem 0 0 0;
+    margin: 0;
 }
 
 .location {
     color: #FF6060;
     margin-top: 0.2rem;
+    font-size: 18px;
 }
 
 .tags {
-    text-decoration: none;
+    list-style-type: none;
+    background-color: #FF6060;
+    padding: 0.3rem 1rem;
+    margin: 0.2rem 0.4rem 0.2rem 0;
+    border-radius: 1rem;
+    color: white;
+    font-size: 14px;
+    margin-bottom: 2rem;
+}
+
+.tagsdiv {
+    display: flex;
+}
+
+.hostName {
+    color: #FF6060;
+    font-size: 18px;
+    margin-top: 1.5rem;
+}
+
+.hostPicture {
+    border-radius: 5rem;
+    width: 64px;
+    height: 64px;
+}
+
+.allSides {
+    display: flex;
+    justify-content: space-between;
+}
+
+.name_picture {
+    display: flex;
+    gap: 1rem;
+}
+
+.allSides {
+    margin-top: 1rem;
+}
+
+.collapse {
+    display: flex;
+}
+
+.description div {
+    flex-basis: 50%;
+    display: flex;
+}
+
+.equipments div {
+    flex-basis: 50%;
+    display: flex;
+}
+
+@media (max-width: 800px) {
+    .allSides {
+        flex-direction: column;
+    }
+    /* .name_picture {
+        justify-content: flex-end;
+    }
+    .stars {
+        justify-content: flex-start;
+    } */
+    .host_stars {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row-reverse;
+    }
+    .tags {
+        margin-bottom: 0.5rem;
+    }
+    .title {
+        margin-bottom: 1rem;
+    }
 }

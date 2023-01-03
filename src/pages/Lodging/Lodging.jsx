@@ -47,32 +47,38 @@ export default function Lodging() {
 	  }
 	}
 
-	console.log(data)
-
 	return (
 		<div className="bodyy">
 			{ data && (
 				<div>
-					<div>
-						<Gallery />
-						<p className="title">{data.title}</p>
-						<p className="location">{data.location}</p>
-						{ data.tags && data.tags.length > 0 && data.tags.map((tag) =>
-							<li className="tags" key={tag}>{tag}</li>
-						)}
-					</div>
-					<div>
-							{/* <div>
-								<p>{data.host.name}</p>
-								<img src={data.host.picture} alt="personne qui loue le logement" />
-							</div> */}
+					<Gallery />
+					<div className="allSides">
+						<div>
+							<p className="title">{data.title}</p>
+							<p className="location">{data.location}</p>
+							<div className="tagsdiv">
+								{ data.tags && data.tags.length > 0 && data.tags.map((tag) =>
+									<li className="tags" key={tag}>{tag}</li>
+								)}
+							</div>
+						</div>
+						<div className="host_stars">
+							<div className="name_picture">
+								<p className="hostName">{data.host.name}</p>
+								<img className="hostPicture" src={data.host.picture} alt="personne qui loue le logement" />
+							</div>
 							<div className="stars">
 								{rating}
 							</div>
 						</div>
-					<div>
-						<Collapse title="Description" text={data.description} />
-						<Collapse title="Equipements" text={data.equipments} />
+					</div>
+					<div className="collapse">
+						<div className="description">
+							<Collapse title="Description" text={data.description} />
+						</div>
+						<div className="equipments">
+							<Collapse title="Equipements" text={data.equipments} />
+						</div>
 					</div>
 				</div>
 			)}
