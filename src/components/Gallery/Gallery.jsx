@@ -17,10 +17,11 @@ export default function Gallery() {
 		})
 		.then(function(res) {
 			const lodging = res.find((el) => el.id === id)
-            const pictures = lodging.pictures
+      const pictures = lodging.pictures
 			setPics(pictures)
 		})
 		.catch((err) => console.log( err ))
+        // eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [])
 
     const nextPics = () => {
@@ -38,8 +39,8 @@ export default function Gallery() {
             }
             {
                 pics.map((slide, index) => (
-                    <div key={index} className={current === index ? "current_picture actived" : "current_picture"}>
-                        {index === current && <img src={slide} alt="représentation des différentes pièces de l'appartement à louer" />}
+                    <div key={index} className={current === index ? "picture actived" : "picture"}>
+                        <img src={slide} alt="représentation des différentes pièces de l'appartement à louer" />
                         {index === current && (
                             <span className="slide_number">
                                 {current + 1}/{pics.length}

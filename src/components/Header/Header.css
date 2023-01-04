@@ -1,12 +1,6 @@
-.header {
-    display: flex;
-    padding-top: 1rem;
-}
+.header {display: flex; padding-top: 1rem;}
 
-.logo {
-    margin-right: auto;
-    padding: 1rem 2rem;
-}
+.logo {margin-right: auto; padding: 1rem 2rem;}
 
 .navbar {
     display: flex;
@@ -25,6 +19,4 @@
     border-bottom: 2px solid transparent;
 }
 
-.navbar a:hover {
-    border-bottom-color: #FF6060;
-}
+.navbar a:hover {border-bottom-color: #FF6060;}

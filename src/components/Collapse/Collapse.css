@@ -15,17 +15,11 @@
     padding: 1.5rem;
 }
 
-.accordions {
-    margin:  3rem 2rem;
-}
+.accordions {margin:  3rem 2rem;}
 
-.accordion {
-    margin-bottom: 1rem;
-}
+.accordion {margin-bottom: 1rem; cursor: pointer;}
 
-.active img {
-    transform: rotate(180deg);
-}
+.active img {transform: rotate(180deg);}
 
 .false .accordion__content {
     visibility: hidden;
@@ -35,6 +29,6 @@
     padding: 0;
 }
 
-.active .accordion__content {
-    transition: all .3s ease-in-out;
-}
+.active .accordion__content {transition: all .5s ease-in-out;}
+
+.false .accordion__content {transition: all .5s ease-in-out;}

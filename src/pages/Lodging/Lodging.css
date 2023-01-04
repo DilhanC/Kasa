@@ -1,6 +1,4 @@
-.bodyy {
-    margin: 0 2rem;
-}
+.bodyy {margin: 1rem 2rem 0 2rem;}
 
 .stars {
     display: flex;
@@ -31,14 +29,13 @@
     margin-bottom: 2rem;
 }
 
-.tagsdiv {
-    display: flex;
-}
+.tagsdiv {display: flex;}
 
 .hostName {
     color: #FF6060;
     font-size: 18px;
-    margin-top: 1.5rem;
+    margin-top: 0.7rem;
+    width: 80px;
 }
 
 .hostPicture {
@@ -47,53 +44,35 @@
     height: 64px;
 }
 
-.allSides {
-    display: flex;
-    justify-content: space-between;
-}
+.allSides {display: flex; justify-content: space-between;}
 
-.name_picture {
-    display: flex;
-    gap: 1rem;
-}
+.name_picture {display: flex; gap: 1rem;}
 
-.allSides {
-    margin-top: 1rem;
-}
+.allSides {margin-top: 1rem; gap: 3rem;}
 
-.collapse {
-    display: flex;
-}
+.collapse {display: flex; justify-content: space-between;}
 
-.description div {
-    flex-basis: 50%;
-    display: flex;
-}
+.collapse .description, .collapse .equipments {width: 48%;}
 
-.equipments div {
-    flex-basis: 50%;
-    display: flex;
-}
+.collapse .description .active .accordion__content,
+.collapse .equipments .active .accordion__content {min-height: 10rem;}
+
+.equipments {list-style-type: none;}
 
 @media (max-width: 800px) {
-    .allSides {
-        flex-direction: column;
-    }
-    /* .name_picture {
-        justify-content: flex-end;
-    }
-    .stars {
-        justify-content: flex-start;
-    } */
+    .allSides {flex-direction: column;}
     .host_stars {
         display: flex;
         justify-content: space-between;
         flex-direction: row-reverse;
-    }
-    .tags {
-        margin-bottom: 0.5rem;
-    }
-    .title {
         margin-bottom: 1rem;
     }
+    .tags {margin-bottom: 0.5rem;}
+    .title {margin-bottom: 1rem;}
+    .collapse {flex-direction: column;}
+    .collapse .description, .collapse .equipments {width: auto;}
+    .allSides {gap: 0.5rem;}
+    .host_stars {margin-bottom: 0.5rem;}
+    .collapse .description .active .accordion__content,
+    .collapse .equipments .active .accordion__content {min-height: auto;}
 }

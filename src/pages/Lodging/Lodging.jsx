@@ -27,6 +27,7 @@ export default function Lodging() {
 			}
 		})
 		.catch(() => navigate("/404", { state: { message: "Data not found" }}))
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [])
 
 	/* Rating */
@@ -37,13 +38,9 @@ export default function Lodging() {
   
 	for (let i = 1; i < maxStar + 1; i++) {
 	  if (i <= stars) {
-		rating.push(<svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-						<path d="M18.645 12L15 0L11.355 12H0L9.27 18.615L5.745 30L15 22.965L24.27 30L20.745 18.615L30 12H18.645Z" fill="#FF6060"/>
-					</svg>)
+		rating.push(<svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18.645 12L15 0L11.355 12H0L9.27 18.615L5.745 30L15 22.965L24.27 30L20.745 18.615L30 12H18.645Z" fill="#FF6060"/></svg>)
 	  } else {
-		rating.push(<svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-						<path d="M18.645 12L15 0L11.355 12H0L9.27 18.615L5.745 30L15 22.965L24.27 30L20.745 18.615L30 12H18.645Z" fill="#E3E3E3"/>
-					</svg>)
+		rating.push(<svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18.645 12L15 0L11.355 12H0L9.27 18.615L5.745 30L15 22.965L24.27 30L20.745 18.615L30 12H18.645Z" fill="#E3E3E3"/></svg>)
 	  }
 	}
 
@@ -57,16 +54,18 @@ export default function Lodging() {
 							<p className="title">{data.title}</p>
 							<p className="location">{data.location}</p>
 							<div className="tagsdiv">
-								{ data.tags && data.tags.length > 0 && data.tags.map((tag) =>
-									<li className="tags" key={tag}>{tag}</li>
+								{ data.tags && data.tags.length > 0 && data.tags.map((tag, index) =>
+									<li className="tags" key={index}>{tag}</li>
 								)}
 							</div>
 						</div>
 						<div className="host_stars">
-							<div className="name_picture">
-								<p className="hostName">{data.host.name}</p>
-								<img className="hostPicture" src={data.host.picture} alt="personne qui loue le logement" />
-							</div>
+							{ data.host && (
+								<div className="name_picture">
+									<p className="hostName">{data.host.name}</p>
+									<img className="hostPicture" src={data.host.picture} alt="personne qui loue le logement" />
+								</div>
+							)}
 							<div className="stars">
 								{rating}
 							</div>
@@ -74,11 +73,21 @@ export default function Lodging() {
 					</div>
 					<div className="collapse">
 						<div className="description">
-							<Collapse title="Description" text={data.description} />
+							<Collapse
+								title="Description"
+								text={data.description}
+							/>
 						</div>
-						<div className="equipments">
-							<Collapse title="Equipements" text={data.equipments} />
-						</div>
+						{ data.equipments && data.equipments.length > 0 && (
+							<div className="equipments">
+								<Collapse
+									title="Equipements"
+									text={data.equipments.map((equipement) => 
+										<li className="equipments" key={equipement}>{equipement}</li>
+									)}
+								/>
+							</div>
+						)}
 					</div>
 				</div>
 			)}

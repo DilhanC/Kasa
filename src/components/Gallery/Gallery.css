@@ -1,9 +1,12 @@
-.actived img {
+.gallery .picture img {
     width: 100%;
     height: 30rem;
     border-radius: 1rem;
     object-fit: cover;
+    display:none;
 }
+
+.gallery .picture.actived img {display:block;}
 
 .slide_number {
     position: absolute;
@@ -13,10 +16,7 @@
     font-size: x-large;
 }
 
-.vector {
-    height: 3rem;
-    cursor: pointer;
-}
+.vector {height: 3rem; cursor: pointer;}
 
 .r {
     position: absolute;

@@ -6,16 +6,8 @@
     margin: 8rem 0 8rem 0;
 }
 
-.errorBody strong {
-    font-size: 11rem;
-}
+.errorBody strong {font-size: 11rem;}
 
-.errorBody p {
-    font-size: 1.5rem;
-    font-weight: bold;
-}
+.errorBody p {font-size: 1.5rem; font-weight: bold;}
 
-.errorBody a {
-    color: #FF6060;
-    margin-top: 8rem;
-}
+.errorBody a {color: #FF6060; margin-top: 8rem;}
