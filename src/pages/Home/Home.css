@@ -4,14 +4,16 @@
     margin: 1rem 2rem 2rem 2rem;
     background-color: black;
     border-radius: 25px;
+    position: relative;
 }
 
 .banner p {
     position: absolute;
     color: white;
     font-size: 34px;
-    transform: translate(10px, 40px);
     z-index: 6;
+    top: 22%;
+    left: auto;
 }
 
 .bannerImg {
@@ -22,4 +24,6 @@
     opacity: 0.7;
 }
 
-@media (max-width: 500px) {.banner p {transform: translate(50px, 20px);}}
+@media (max-width: 720px) {.card {width: 100%;}}
+
+@media (max-width: 600px) {.banner p {top: 9%; left: 10%; width: 320px;}}
