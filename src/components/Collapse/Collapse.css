@@ -12,14 +12,14 @@
     border-radius: 1rem;
     color: #FF6060;
     font-size: larger;
-    padding: 1.5rem;
+    padding: 2.5rem 1.5rem 1.5rem 1.5rem;
 }
 
 .accordions {margin:  3rem 2rem;}
 
-.accordion {margin-bottom: 1rem; cursor: pointer;}
+.accordion {margin-bottom: 1.5rem; cursor: pointer;}
 
-.active img {transform: rotate(180deg);}
+.active .accordion__title img {transform: rotate(180deg);}
 
 .false .accordion__content {
     visibility: hidden;
@@ -29,6 +29,9 @@
     padding: 0;
 }
 
-.active .accordion__content {transition: all .5s ease-in-out;}
-
-.false .accordion__content {transition: all .5s ease-in-out;}
+.active .accordion__content {
+    transition: all .5s ease-in-out;
+    position: relative;
+    margin-top: -1.2rem;
+    z-index: -1;
+}

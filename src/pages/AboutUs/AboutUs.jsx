@@ -27,11 +27,13 @@ export default function AboutUs() {
           <img className="bannerImg" src={imgAboutUs} alt="représentation de montagne"/>
         </div>
         <div className="accordions">
-          {data.map((item) =>
-            <Collapse 
+          {data.map((item, index) =>
+          <div key={index}>
+            <Collapse
               title={item.title} 
               text={item.text} 
             />
+          </div>
           )}
         </div>
       </div>

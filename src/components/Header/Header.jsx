@@ -6,7 +6,9 @@ import "./Header.css"
 export default function Header() {
     return (
         <div className="header">
-            <img src={LOGO} alt="logo du site kasa" className="logo"></img>
+            <NavLink to="/">
+                <img src={LOGO} alt="logo du site kasa" className="logo"></img>
+            </NavLink>
             <nav className="navbar">
                 <NavLink to="/">Accueil</NavLink>
                 <NavLink to="/aboutus">À propos</NavLink>

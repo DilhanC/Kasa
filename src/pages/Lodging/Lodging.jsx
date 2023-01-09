@@ -54,8 +54,8 @@ export default function Lodging() {
 							<p className="title">{data.title}</p>
 							<p className="location">{data.location}</p>
 							<div className="tagsdiv">
-								{ data.tags && data.tags.length > 0 && data.tags.map((tag, index) =>
-									<li className="tags" key={index}>{tag}</li>
+								{ data.tags && data.tags.length > 0 && data.tags.map((tag, i) =>
+									<li className="tags" key={i}>{tag}</li>
 								)}
 							</div>
 						</div>
@@ -82,8 +82,8 @@ export default function Lodging() {
 							<div className="equipments">
 								<Collapse
 									title="Equipements"
-									text={data.equipments.map((equipement) => 
-										<li className="equipments" key={equipement}>{equipement}</li>
+									text={data.equipments.map((equipement, index) =>
+										<li className="equipments" key={index}>{equipement}</li>
 									)}
 								/>
 							</div>
