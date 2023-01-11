@@ -17,7 +17,7 @@ export default function Collapse(props) {
                 <img src={Vector} alt="boutton" />
             </div>
             <div className="accordion__content">
-                {props.text}
+                <p>{props.text}</p>
             </div>
         </div>
     )

@@ -74,5 +74,5 @@
     .allSides {gap: 0.5rem;}
     .host_stars {margin-bottom: 0.5rem;}
     .collapse .description .active .accordion__content,
-    .collapse .equipments .active .accordion__content {min-height: auto;}
+    .collapse .equipments .active .accordion__content {min-height: 15rem}
 }

@@ -34,14 +34,14 @@ export default function Lodging() {
 	const stars = data.rating
 
 	const maxStar = 5;
-	const rating = []
+	const ratings = []
   
 	for (let i = 1; i < maxStar + 1; i++) {
-	  if (i <= stars) {
-		rating.push(<svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18.645 12L15 0L11.355 12H0L9.27 18.615L5.745 30L15 22.965L24.27 30L20.745 18.615L30 12H18.645Z" fill="#FF6060"/></svg>)
-	  } else {
-		rating.push(<svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18.645 12L15 0L11.355 12H0L9.27 18.615L5.745 30L15 22.965L24.27 30L20.745 18.615L30 12H18.645Z" fill="#E3E3E3"/></svg>)
-	  }
+		if (i <= stars) {
+			ratings.push(true);
+		} else {
+			ratings.push(false);
+		}
 	}
 
 	return (
@@ -54,8 +54,8 @@ export default function Lodging() {
 							<p className="title">{data.title}</p>
 							<p className="location">{data.location}</p>
 							<div className="tagsdiv">
-								{ data.tags && data.tags.length > 0 && data.tags.map((tag, i) =>
-									<li className="tags" key={i}>{tag}</li>
+								{ data.tags && data.tags.length > 0 && data.tags.map((tag, index) =>
+									<li className="tags" key={`tags-${index}`}>{tag}</li>
 								)}
 							</div>
 						</div>
@@ -67,7 +67,11 @@ export default function Lodging() {
 								</div>
 							)}
 							<div className="stars">
-								{rating}
+								{ ratings && ratings.length > 0 && ratings.map((rating, index) =>
+									<svg key={`star-${index}`} width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M18.645 12L15 0L11.355 12H0L9.27 18.615L5.745 30L15 22.965L24.27 30L20.745 18.615L30 12H18.645Z" fill={rating ? "#FF6060" : "#E3E3E3"} />
+									</svg>
+								)}
 							</div>
 						</div>
 					</div>
@@ -83,7 +87,7 @@ export default function Lodging() {
 								<Collapse
 									title="Equipements"
 									text={data.equipments.map((equipement, index) =>
-										<li className="equipments" key={index}>{equipement}</li>
+										<li className="equipments" key={`equipments-${index}`}>{equipement}</li>
 									)}
 								/>
 							</div>
