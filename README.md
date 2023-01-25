@@ -1,3 +1,12 @@
+# Projet 7 de la Formation Développeur Web 
+
+Création d'un site de location immobilière en REACT.
+
+![p7](https://user-images.githubusercontent.com/105727852/214628963-c052f5fe-3bb9-46ff-94f0-d32533da9070.jpg)
+![p7 1](https://user-images.githubusercontent.com/105727852/214628985-0e2a602c-57dd-4f6e-802d-d2e2d736589f.jpg)
+![p7 2](https://user-images.githubusercontent.com/105727852/214629000-2d13d1d3-11e4-40d3-a45e-17729fef84d1.jpg)
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
